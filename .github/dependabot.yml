@@ -5,9 +5,19 @@ version: 2
 updates:
 
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directories:
+      - "/"
+    open-pull-requests-limit: 3
     schedule:
-      # Check for updates to GitHub Actions every weekday
       interval: "daily"
-      labels:
-        - "bot"
+    cooldown:
+      default-days: 7
+    groups:
+      gha:
+        patterns:
+          - "*"
+    labels:
+      - "bot"
+    commit-message:
+      prefix: "chore: "
+      include: "scope"
