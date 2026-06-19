@@ -23,7 +23,7 @@ jobs:
       GVD_VERSION_FNAME: "version.txt"
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.3
         with:
           fetch-depth: 0
 
